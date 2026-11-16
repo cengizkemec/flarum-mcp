@@ -1,0 +1,302 @@
+.McpPage {
+  .McpPage-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .McpTabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    border-bottom: 1px solid var(--control-border-color);
+    padding-bottom: 8px;
+  }
+
+  .McpTab {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    color: var(--muted-color);
+    cursor: pointer;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: var(--border-radius);
+
+    &:hover {
+      background: var(--control-bg);
+      color: var(--text-color);
+    }
+
+    &.active {
+      background: var(--control-bg);
+      color: var(--text-color);
+    }
+  }
+
+  .McpServerBar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px;
+    background: var(--control-bg);
+    border-radius: var(--border-radius);
+
+    code {
+      display: block;
+      margin-top: 4px;
+      word-break: break-all;
+    }
+  }
+
+  .McpCards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+  }
+
+  .McpCard {
+    background: var(--control-bg);
+    border-radius: var(--border-radius);
+    padding: 16px;
+  }
+
+  .McpCard-value {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .McpCard-label {
+    color: var(--muted-color);
+    font-size: 12px;
+    margin-top: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .McpPanel {
+    background: var(--control-bg);
+    border-radius: var(--border-radius);
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+
+  .FormControl {
+    --form-control-bg: var(--body-bg);
+    --form-control-color: var(--text-color);
+    border-color: var(--control-bg);
+  }
+
+  .McpFormGrid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 12px;
+
+    label {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      min-width: 0;
+      font-weight: 600;
+    }
+
+    @media (max-width: 1000px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @media (max-width: 640px) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  .McpFull {
+    grid-column-start: 1;
+    grid-column-end: -1;
+  }
+
+  .McpInline {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .McpGrow {
+    flex: 1 1 260px;
+  }
+
+  .McpMuted {
+    color: var(--muted-color);
+    font-size: 12px;
+  }
+
+  .McpBadge {
+    display: inline-block;
+    background: var(--control-bg);
+    border-radius: 999px;
+    font-size: 12px;
+    padding: 2px 8px;
+  }
+
+  .McpTableWrap {
+    overflow-x: auto;
+  }
+
+  .McpTable {
+    width: 100%;
+    border-collapse: collapse;
+
+    th,
+    td {
+      border-bottom: 1px solid var(--control-border-color);
+      padding: 10px 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      color: var(--muted-color);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+    }
+  }
+
+  .McpActions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .McpPermissions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 4px 12px;
+    margin-bottom: 16px;
+    max-height: 320px;
+    overflow-y: auto;
+    padding: 8px;
+    background: var(--body-bg);
+    border-radius: var(--border-radius);
+  }
+
+  .McpPermission {
+    align-items: center;
+    display: flex;
+    gap: 8px;
+    font-size: 13px;
+
+    input {
+      margin: 0;
+    }
+
+    em {
+      color: var(--muted-color);
+      font-size: 11px;
+      margin-left: auto;
+    }
+  }
+
+  .McpApproval {
+    background: var(--control-bg);
+    border-radius: var(--border-radius);
+    margin-bottom: 12px;
+    padding: 16px;
+
+    pre {
+      background: var(--body-bg);
+      border-radius: var(--border-radius);
+      max-height: 240px;
+      overflow: auto;
+      padding: 12px;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+  }
+
+  .McpApproval-header {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+
+  .McpPreview {
+    background: var(--control-bg);
+    border-radius: var(--border-radius);
+    padding: 16px;
+
+    pre {
+      max-height: 420px;
+      overflow: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+  }
+
+  .McpPreview-header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .McpToken {
+    background: var(--body-bg);
+    border-radius: var(--border-radius);
+    margin: 8px 0 0;
+    overflow-x: auto;
+    padding: 12px;
+    user-select: all;
+  }
+
+  .McpSetting {
+    align-items: center;
+    display: grid;
+    grid-template-columns: minmax(180px, 260px) 1fr;
+    gap: 12px;
+    padding: 8px 0;
+
+    > span {
+      font-weight: 600;
+    }
+
+    > .FormControl {
+      max-width: 420px;
+    }
+  }
+
+  .McpSettings .Form-body > .Button {
+    align-self: flex-start;
+    min-width: 120px;
+    width: auto;
+  }
+
+  .McpFilters {
+    margin-bottom: 12px;
+  }
+
+  @media (max-width: 767px) {
+    .McpTabs {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+
+    .McpTab {
+      flex: 0 0 auto;
+      white-space: nowrap;
+    }
+
+    .McpSetting {
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+/vendor/
+/composer.lock
+/composer.phar
+/js/node_modules/
+/js/dist-typings/
+/tests/.phpunit.cache/
+/.phpunit.cache/
+/tests/tmp/
+/.idea/
+/.vscode/
+*.log
+/tools/add-guarded.php

@@ -1,0 +1,94 @@
+{
+    "name": "cengizkemec/flarum-mcp",
+    "description": "Universal Model Context Protocol server and AI integration platform for Flarum 2.0.",
+    "keywords": [
+        "flarum",
+        "mcp",
+        "ai",
+        "model-context-protocol",
+        "extension"
+    ],
+    "type": "flarum-extension",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Cengiz Kemeç",
+            "email": "info@cengizkemec.com.tr",
+            "homepage": "https://cengizkemec.com.tr"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/cengizkemec/flarum-mcp/issues",
+        "source": "https://github.com/cengizkemec/flarum-mcp",
+        "docs": "https://github.com/cengizkemec/flarum-mcp/blob/main/docs/README.md"
+    },
+    "require": {
+        "php": "^8.3",
+        "ext-mbstring": "*",
+        "flarum/core": "^2.0",
+        "mcp/sdk": "^0.10"
+    },
+    "require-dev": {
+        "flarum/testing": "^2.0",
+        "phpunit/phpunit": "^12.5"
+    },
+    "suggest": {
+        "ext-curl": "Required for installing Skills from HTTPS URLs.",
+        "ext-zip": "Required for installing Skills from ZIP archives.",
+        "flarum/tags": "Enables tag discovery and discussion tag arguments.",
+        "flarum/lock": "Enables the lock and unlock discussion tools.",
+        "flarum/sticky": "Enables the pin and unpin discussion tools."
+    },
+    "autoload": {
+        "psr-4": {
+            "CengizKemec\\FlarumMcp\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CengizKemec\\FlarumMcp\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "MCP Server",
+            "category": "feature",
+            "optional-dependencies": [
+                "flarum/tags",
+                "flarum/lock",
+                "flarum/sticky"
+            ],
+            "icon": {
+                "name": "fas fa-robot",
+                "backgroundColor": "#1f2937",
+                "color": "#fff"
+            }
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "composer/installers": true,
+            "flarum/core": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "test": [
+            "@test:unit",
+            "@test:integration"
+        ],
+        "test:unit": "@php vendor/bin/phpunit -c tests/phpunit.unit.xml",
+        "test:integration": "@php vendor/bin/phpunit -c tests/phpunit.integration.xml",
+        "test:setup": "@php tests/integration/setup.php",
+        "lint": "@php tools/lint.php"
+    },
+    "scripts-descriptions": {
+        "test": "Run unit and integration tests.",
+        "test:unit": "Run unit tests.",
+        "test:integration": "Run Flarum integration tests.",
+        "test:setup": "Prepare the integration test database (run once).",
+        "lint": "Run PHP syntax checks over the extension."
+    }
+}
